@@ -11,26 +11,24 @@
 <body>
 <style>
 body {
-    background-color: #d0e4fe;
+background-color: #ffff00;
 }
 
 h1 {
-    color: orange;
+    color: red;
     text-align: center;
 }
-
-p {
-    font-family: "Times New Roman";
-    font-size: 20px;
+.ali-right{
+align:right;
 }
 </style>
 </head>
 <body>
-
+<div class="container">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">praveen Kumar Dhatrika</a>
+      <a class="navbar-brand" href="#">Praveen Kumar Dhatrika</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
@@ -48,11 +46,24 @@ p {
   
 <div class="container">
 <h1 class="text-center">Praveen Kumar Dhatrika </h1>
+<hr/>
   <marquee>
-  This is my second semester here in  Harrisburg University.
-<marquee>
-  <p>.</p>
-</div>
+  This is my first Assginment for ISEM 551-50.
+  </marquee>
+  <br/>
+<p>Click the button to find more about me:</p>
 
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    alert("Name: Praveen Kumar Dhatrika \nOccupation: Dot Net Developer \nExperience: 5 Years");
+	alert("Doing my second Masters in Here, Second Semester.\nMy first Masters was from St. Mary's University, San Antonio, TX\nMajor in Computer Science")
+}
+</script>
+<hr/>
+<div">
+Designed by <b><a href="mailto:praveendhatrika@gmail.com">Praveen K. Dhatrika</a></b><br />
+</div>
 </body>
 </html>
