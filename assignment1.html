@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Case</title>
+  <title>551-50 Assignement-1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 <body>
 <style>
@@ -21,6 +22,21 @@ h1 {
 .ali-right{
 align:right;
 }
+li{list-style: none; }
+
+h3{color: red;}
+.animate-enter, .animate-leave {
+transition: 500ms ease-in all;
+position: relative;
+display: block;
+} 
+.animate-enter.animate-enter-active, .animate-leave {
+left: 0;
+}
+.animate-leave.animate-leave-active, .animate-enter {
+left: 500px;
+}
+
 </style>
 </head>
 <body>
@@ -28,42 +44,84 @@ align:right;
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Praveen Kumar Dhatrika</a>
+      <a class="navbar-brand" href="https://www.facebook.com/praveenkumar.dhatrika" target="_blank">Praveen Kumar Dhatrika</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">My-Projects <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="http://sripooja.com/" target="_blank">Sripooja</a></li>
+            <li><a href="http://sripooja.com/" target="_blank">SriSaiVedaGayathriPoojaServices</a></li>
             <li><a href="http://www.lincolnshireprop.com/" target="_blank">LincolnShire-Properties</a></li>
           </ul>
         </li>
-
     </div>
   </div>
 </nav>
   
-<div class="container">
+<hr/>
 <h1 class="text-center">Praveen Kumar Dhatrika </h1>
 <hr/>
   <marquee>
-  This is my first Assginment for ISEM 551-50.
+Hello, Naveen. Updated first assigment to add <a href="http://www.w3schools.com/bootstrap/default.asp" target="_blank" class="btn btn-default">Bootstrap</a> and <a href="http://www.w3schools.com/angular/angular_filters.asp" target="_blank" class="btn btn-default">AngularJS</a>
   </marquee>
   <br/>
 <p>Click the button to find more about me:</p>
 
-<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction()" class="btn btn-primary">Try it</button>
 
 <script>
 function myFunction() {
-    alert("Name: Praveen Kumar Dhatrika \nOccupation: Dot Net Developer \nExperience: 5 Years");
+    alert("Name: Praveen Kumar Dhatrika \nOccupation: Dot Net Developer \nExperience: 5+ Years");
 	alert("Doing my second Masters in Here, Second Semester.\nMy first Masters was from St. Mary's University, San Antonio, TX\nMajor in Computer Science")
 }
+
+
 </script>
 <hr/>
-<div">
-Designed by <b><a href="mailto:praveendhatrika@gmail.com">Praveen K. Dhatrika</a></b><br />
+
+
+<p>Click the table headers to change the sorting order:</p>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+<table border="1" width="100%">
+<tr>
+<th ng-click="orderByMe('State')">State</th>
+<th ng-click="orderByMe('Capital')">Capital</th>
+</tr>
+<tr ng-repeat="x in names | orderBy:myOrderBy">
+<td>{{x.State}}</td>
+<td>{{x.Capital}}</td>
+</tr>
+</table>
+
 </div>
+
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    $scope.names = [
+        {State:'Alabama',Capital:'Montegomery'},
+        {State:'Alaska',Capital:'Juneau'},
+        {State:'Arizona',Capital:'Phoenix'},
+        {State:'California',Capital:'Sacremento'},
+        {State:'Colorado',Capital:'Denver'},
+        {State:'Connecticut',Capital:'Hatford'},
+        {State:'Delware',Capital:'Dover'},
+        {State:'Florida',Capital:'Tallahassee'},
+        {State:'Geogia',Capital:'Atlanta'}
+        ];
+    $scope.orderByMe = function(x) {
+        $scope.myOrderBy = x;
+    }
+});
+</script>
+
+<p>The sorting is done using angular.js.</p>
+<div">
+<hr/>
+Designed by <b><a href="mailto:praveendhatrika@gmail.com" class="btn btn-warning">Praveen K. Dhatrika</a></b><br />
+</div>
+
 </body>
 </html>
